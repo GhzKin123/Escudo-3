@@ -20,17 +20,8 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-<<<<<<< HEAD
-    - - name: Give gradlew permission
-  run: chmod +x ./gradlew
-
-- name: Build
-  run: ./gradlew build
-
-=======
       - name: Give gradlew permission
         run: chmod +x ./gradlew
->>>>>>> f2423a9671042998fae3960598aa1e774e4398de
 
       - name: Build
         run: ./gradlew build
@@ -39,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: warden-shield-mod
-          path: build/libs/warden-shield-mod-1.0.0.jar
+          path: build/libs/
