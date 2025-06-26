@@ -17,3 +17,12 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:0.15.0")
     modImplementation("net.fabricmc.fabric-api:fabric-api:0.95.1+1.21.1")
 }
+
+tasks {
+    // Gera o jar do mod remapeado para o Minecraft
+    val remapJar by getting(com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar::class) {
+        archiveBaseName.set("warden-shield-mod")
+        archiveVersion.set(version.toString())
+        archiveClassifier.set("")
+    }
+}
