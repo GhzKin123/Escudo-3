@@ -19,10 +19,19 @@ dependencies {
 }
 
 tasks {
-    // Gera o jar do mod remapeado para o Minecraft
-    val remapJar by getting(com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar::class) {
+    // Garante que o .jar do mod seja produzido e remapeado
+    withType<JavaCompile> {
+        options.encoding = "UTF-8"
+    }
+
+    processResources {
+        filesMatching("fabric.mod.json") {
+            expand("version" to project.version)
+        }
+    }
+
+    jar {
         archiveBaseName.set("warden-shield-mod")
-        archiveVersion.set(version.toString())
-        archiveClassifier.set("")
+        archiveVersion.set("1.0.0")
     }
 }
