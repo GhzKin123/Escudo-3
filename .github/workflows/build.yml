@@ -30,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: warden-shield-mod
-          path: build/libs/*.jar
+          path: build/libs/warden-shield-mod-1.0.0.jar
